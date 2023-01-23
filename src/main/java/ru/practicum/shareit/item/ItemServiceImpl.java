@@ -94,7 +94,7 @@ public class ItemServiceImpl implements ItemService {
         if (text.isEmpty()) return searchedItems;
         String textLow = text.toLowerCase();
         List<List<Item>> itemsLists = List.copyOf(itemDao.getItems().values());
-        // Перебираем все предметы
+        // Перебираем все предметы для поиска
         for (List<Item> items: itemsLists) {
             for (Item itm: items) {
                 if (itm.getAvailable() && (itm.getName().toLowerCase().contains(textLow)
