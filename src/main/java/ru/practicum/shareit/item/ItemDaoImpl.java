@@ -31,14 +31,14 @@ public class ItemDaoImpl implements ItemDao {
             return userItems;
         });
         return items.get(userId).stream()
-                .filter(i -> i.getId() == item.getId())
+                .filter(i -> i.getId().equals(item.getId()))
                 .findFirst()
                 .get();
     }
 
     @Override
     public Item updateItem(Long userId, Long itemId, Item item) {
-        items.get(userId).removeIf(i -> i.getId() == itemId);
+        items.get(userId).removeIf(i -> i.getId().equals(itemId));
         items.get(userId).add(item);
         return item;
     }

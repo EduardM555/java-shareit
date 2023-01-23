@@ -35,7 +35,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public ItemUpdateDto updateItem(Long userId, Long itemId, ItemUpdateDto itemUpdateDto) {
         Item item = getItem(itemId);
-        if (item.getOwner().getId() != userId) {
+        if (!item.getOwner().getId().equals(userId)) {
             throw new ItemAccessException("Доступ для редактирования запрещен");
         }
         if (itemUpdateDto.getName() != null) {
@@ -77,7 +77,7 @@ public class ItemServiceImpl implements ItemService {
         // Перебираем все предметы
         for (List<Item> items: itemsLists) {
             for (Item itm: items) {
-                if (itm.getId() == itemId) {
+                if (itm.getId().equals(itemId)) {
                     item = itm;
                 }
             }
