@@ -22,11 +22,4 @@ public class UserErrorHandler {
         log.warn("404 {}", e.getMessage());
         return new ErrorResponse(e.getMessage());
     }
-
-//    @ExceptionHandler
-//    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-//    public ErrorResponse handlerThrowable(final Throwable e) {
-//        log.error("500 {}, e: {}", e.getMessage(), e);
-//        return new ErrorResponse("Произошла непредвиденная ошибка.");
-//    }
 }
