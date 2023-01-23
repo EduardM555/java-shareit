@@ -37,7 +37,4 @@ public class ItemMapper {
         );
     }
 
-    public static ItemNameDescrDto toItemNameDescrDto(Item item) {
-        return new ItemNameDescrDto(item.getId(), item.getName(), item.getDescription(), item.getAvailable());
-    }
 }
