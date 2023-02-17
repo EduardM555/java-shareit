@@ -1,4 +1,4 @@
-package ru.practicum.shareit.item.model;
+package ru.practicum.shareit.item.dto;
 
 import lombok.*;
 import ru.practicum.shareit.request.ItemRequest;
@@ -12,18 +12,11 @@ import ru.practicum.shareit.user.User;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Item {
+public class ItemUpdateDto {
     private Long id;
     private String name;
     private String description;
     private Boolean available;
     private User owner;
     private ItemRequest request;
-
-    public Item(String name, String description, Boolean available, ItemRequest request) {
-        this.name = name;
-        this.description = description;
-        this.available = available;
-        this.request = request;
-    }
 }
