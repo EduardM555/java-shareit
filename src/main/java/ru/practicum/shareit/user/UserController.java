@@ -10,9 +10,6 @@ import ru.practicum.shareit.user.exception.UserCreateException;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * TODO Sprint add-controllers.
- */
 @RestController
 @RequestMapping(path = "/users")
 @RequiredArgsConstructor
