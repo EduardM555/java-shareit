@@ -38,7 +38,9 @@ public class UserServiceImpl implements UserService {
             user.setName(userDto.getName());
         }
         if (userDto.getEmail() != null) {
-            isEmailNotExists(UserMapper.toUser(id, userDto));
+            if (!user.getEmail().equals(userDto.getEmail())) {
+                isEmailNotExists(UserMapper.toUser(id, userDto));
+            }
             user.setEmail(userDto.getEmail());
         }
         return UserMapper.toUserForUpdateDto(id, userDao.updateUser(id, user));
